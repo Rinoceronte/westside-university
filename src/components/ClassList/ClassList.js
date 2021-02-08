@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import Student from '../Student/Student';
 
 export default class ClassList extends Component {
   constructor() {
@@ -25,6 +24,7 @@ export default class ClassList extends Component {
     let mappedArray = this.state.students.map((s, i) => <Link key={i} to={`/student/${s.id}`}><h3>{s.first_name} {s.last_name}</h3></Link>);
     return (
       <div className="box">
+        <Link to="/"><button>Back</button></Link>
         <h1>{this.props.match.params.class}</h1>
         <h2>ClassList:</h2>
         {mappedArray}
